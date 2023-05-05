@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# usages-plugin Changelog
+# count-usages Changelog
 
 ## [Unreleased]
 ### Added

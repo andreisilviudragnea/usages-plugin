@@ -1,1 +1,1 @@
-rootProject.name = "usages-plugin"
+rootProject.name = "count-usages"

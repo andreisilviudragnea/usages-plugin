@@ -1,18 +1,21 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.andreisilviudragnea.usagesplugin</id>
-    <name>usages-plugin Template</name>
+    <name>Count Usages</name>
     <vendor>andreisilviudragnea</vendor>
 
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <depends>org.intellij.scala</depends>
+    <depends>com.intellij.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>org.rust.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.andreisilviudragnea.usagesplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <localInspection language="" shortName="ElementWithOneUsageInspection" suppressId="ElementWithOneUsage"
+                         displayName="Element with one usage" groupName="Usages" enabledByDefault="true" level="WARNING"
+                         implementationClass="io.dragnea.usages.ElementWithOneUsageInspection"/>
+        <localInspection language="Scala" shortName="JsonCodecInspection" suppressId="JsonCodec"
+                         displayName="JsonCodec" groupName="Usages" enabledByDefault="true" level="WARNING"
+                         implementationClass="io.dragnea.usages.JsonCodecInspection"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.andreisilviudragnea.usagesplugin.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
-    </applicationListeners>
 </idea-plugin>
